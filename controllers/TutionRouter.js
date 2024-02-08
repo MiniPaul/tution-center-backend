@@ -12,6 +12,11 @@ router.post("/add",async(req,res)=>{
     })
 })
 
+router.get("/viewall",async(req,res)=>{
+    let data=await tutionModel.find()
+    res.json(data)
+})
+
 router.get("/search",async(req,res)=>{
     let input = req.body
     let data=await tutionModel.find(input)
